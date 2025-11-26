@@ -82,8 +82,8 @@ def edit_sheetname(sheet_name_original):
 
     """
 
-    sheet_name_dict_tmp = copy.deepcopy(sheet_name_dict)
-    if sheet_name_original in sheet_name_dict_tmp:
+    if sheet_name_original in sheet_name_dict:
+        sheet_name_dict_tmp = copy.deepcopy(sheet_name_dict)
         sheet_name_edit_l = sheet_name_dict_tmp[sheet_name_original]
     else:
         sheet_name_edit_l = [sheet_name_original]
