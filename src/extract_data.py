@@ -34,6 +34,8 @@ import re
 import argparse
 import warnings
 import pyexcel
+import copy
+from collections import Counter
 
 warnings.filterwarnings(
     "ignore",
@@ -96,25 +98,25 @@ def edit_sheetname(sheet_name_original):
             # Classify each element
             date = next((p for p in parts if re.fullmatch(r"\d{6}", p)), None)
             if date is None:
-                matches = re.findall(r"\d{6}", data_file)
+                matches = re.findall(r"\d{6}", os.path.basename(data_file))
                 date = matches[-1] if matches else None
 
             pt = next((p for p in parts if re.fullmatch(r"PT\d+|[^_]{3}F", p)),
                       None)
             if pt is None:
-                matches = re.findall(r"PT\d+|[^_]{3}F", data_file)
+                matches = re.findall(r"PT\d+|[^_]{3}F", os.path.basename(data_file))
                 pt = matches[-1] if matches else None
 
             dgf = next((p for p in parts if p in ["D", "G", "F"]), None)
             if dgf is None:
-                matches = re.findall(r"_[DGF]", data_file)
+                matches = re.findall(r"_[DGF]", os.path.basename(data_file))
                 dgf = matches[-1].replace("_", "") if matches else None
 
             peptide_library = next((p for p in parts if p in reference_file),
                                    None)
             if peptide_library is None:
                 peptide_library = next(
-                    (p for p in data_file.split("/")[-1].split("_")
+                    (p for p in os.path.basename(data_file).split("_")
                      if p in reference_file), None
                 )
 
