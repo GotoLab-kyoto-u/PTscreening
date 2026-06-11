@@ -65,9 +65,9 @@ where:
 - enzyme: PT<number> or XXXF
 - prenyl_donor: D, G, or F
 #### Behavior:
-- If "standardized name" is empty, the corresponding sample is ignored during processing.
-- Such samples are not parsed and are excluded from all downstream analyses.
-- This mechanism is intentionally used to allow selective exclusion of samples without modifying raw UNIFI data.
+- If "standardized name" is empty, the corresponding sheet is skipped.
+- Such sheets are not parsed and are excluded from all downstream analyses.
+- This mechanism is intentionally used to allow selective exclusion of sheets without modifying raw UNIFI data.
 
 ### 5. CSV file used for renaming prenyltransferase names (optional)
 Mapping table between prenyltransferase IDs and prenyltransferase names used for annotation consistency.  
