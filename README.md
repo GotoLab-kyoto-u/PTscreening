@@ -5,13 +5,12 @@ This script aggregates data exported from UNIFI and extracts relevant informatio
 
 ## Directory Structure
 main/
- ├─ src/
- │   ├─ extract_data.py
- │   ├─ analyze_data.py
- ├─ data/
- ├─ LICENSE
- ├─ README.md
- ├─ requirements.txt
+├─ src/
+│  ├─ extract_data.py
+│  └─ analyze_data.py
+├─ LICENSE
+├─ README.md
+└─ requirements.txt
 
 ## Requirements
 - Python 3.14 or later
