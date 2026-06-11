@@ -44,10 +44,11 @@ This file defines expected retention times for unmodified peptides and is used t
 ### 3. CSV file listing peptide and prenyltransferase names used in the analysis
 In this documentation, it is referred to as `protein_pt_list.csv` as an example.
 #### Required columns:
-- Protein name
+- Protein name  
   peptide names
-- PT_Name
+- PT_Name  
   prenyltransferase names
+  Unknown prenyltransferases are assigned identifiers in the format "PT<number>" (e.g., PT1, PT2, ...), whereas known prenyltransferases are labeled with the suffix "*F".
 
 ### 4. CSV file used for renaming sheet names (optional)
 A user-defined CSV file used to map raw UNIFI sheet names to standardized identifiers for downstream analysis.  
