@@ -62,8 +62,10 @@ In this documentation, it is referred to as `rename.csv` as an example.
 where:
 - YYMMDD: 6-digit acquisition date
 - peptide_library name: identifier without underscores
-- prenyltransferase IDs: PT<number> or *F
-- prenyl_donor: D, G, or F
+- prenyltransferase IDs:
+  - `PT<number>`: unknown prenyltransferases
+  - `XXXF`: known prenyltransferases (3-letter code + F)
+- prenyl_donor: D (C5), G (C10), or F (C15)
 #### Behavior:
 - If "standardized name" is empty, the corresponding sheet is skipped.
 - Such sheets are not parsed and are excluded from all downstream analyses.
