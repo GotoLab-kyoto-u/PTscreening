@@ -1,7 +1,7 @@
 # PTscreening
 
 ## Overview
-This script aggregates data exported from UNIFI and extracts relevant information to calculate the conversion rate for each combination of peptide, prenyl donor, and prenyltransferase.
+This script aggregates data exported from UNIFI and extracts relevant information to calculate the conversion rate for each combination of peptide, prenyl donor, and prenyltransferase.  
 The pipeline automates peak parsing, reference-based assignment, and downstream conversion rate calculation from high-throughput screening datasets.
 
 ## Directory Structure
@@ -58,11 +58,11 @@ In this documentation, it is referred to as `rename.csv` as an example.
 - original name
 - standardized name
 #### Standardized name format:
-Sample_<YYMMDD>_<peptide_library>_<enzyme>_<prenyl_donor>_*  
+`Sample_<YYMMDD>_<peptide_library>_<prenyltransferase IDs>_<prenyl_donor>_*`  
 where:
 - YYMMDD: 6-digit acquisition date
-- peptide_library: identifier without underscores
-- enzyme: PT<number> or XXXF
+- peptide_library name: identifier without underscores
+- prenyltransferase IDs: PT<number> or *F
 - prenyl_donor: D, G, or F
 #### Behavior:
 - If "standardized name" is empty, the corresponding sheet is skipped.
@@ -73,9 +73,9 @@ where:
 Mapping table between prenyltransferase IDs and prenyltransferase names used for annotation consistency.  
 In this documentation, it is referred to as `pt_name_list.csv` as an example.
 #### Required columns:
-- PT_No
+- PT_No  
   prenyltransferase IDs
-- PT_name
+- PT_name  
   prenyltransferase names
 
 ## Tested Environment
