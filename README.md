@@ -47,7 +47,7 @@ In this documentation, it is referred to as `protein_pt_list.csv` as an example.
 - Protein name  
   peptide names
 - PT_Name  
-  prenyltransferase names
+  prenyltransferase names  
   Unknown prenyltransferases are assigned identifiers in the format "PT<number>" (e.g., PT1, PT2, ...), whereas known prenyltransferases are labeled with the suffix "*F".
 
 ### 4. CSV file used for renaming sheet names (optional)
@@ -57,6 +57,13 @@ In this documentation, it is referred to as `rename.csv` as an example.
 #### Required columns:
 - original name
 - standardized name
+#### Standardized name format:
+Sample_<YYMMDD>_<peptide_library>_<enzyme>_<prenyl_donor>_*  
+where:
+- YYMMDD: 6-digit acquisition date
+- peptide_library: identifier without underscores
+- enzyme: PT<number> or XXXF
+- prenyl_donor: D, G, or F
 #### Behavior:
 - If "standardized name" is empty, the corresponding sample is ignored during processing.
 - Such samples are not parsed and are excluded from all downstream analyses.
